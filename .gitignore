@@ -11,3 +11,4 @@ env/
 # IDEs and Project files
 .idea/
 .GestProy
+.env

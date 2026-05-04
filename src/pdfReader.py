@@ -1,13 +1,15 @@
-from uuid import main
-
 from config import get_downloads_path
-import pathlib
-import os
 
 
-def reader(path):
-    print (f"La ruta a leer es {path}")
+def downloadsList(path):
+    if path == None:
+        return
+
+    for file in path.iterdir():
+        if file.is_file(): #and file.suffix == ".pdf":
+            print(f"Archívo: {file.stem} | Típo: {file.suffix}")
 
 
-path = get_downloads_path()
-reader(path)
+if __name__ == "__main__":
+    path = get_downloads_path()
+    downloadsList(path)
